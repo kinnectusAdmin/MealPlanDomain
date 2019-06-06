@@ -11,3 +11,8 @@ public struct Location {
     let latitude: NSNumber
     let longitude: NSNumber
 }
+extension Location {
+    static var empty: Location {
+        return Location(latitude: 0, longitude: 0)
+    }
+}

@@ -13,3 +13,8 @@ public struct School {
     public let address: String
     public let location: Location
 }
+extension School {
+    public static var empty: School {
+        return School(id: "", name: "", address: "", location: Location.empty)
+    }
+}

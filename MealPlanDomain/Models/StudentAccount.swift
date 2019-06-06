@@ -8,6 +8,11 @@
 
 import Foundation
 public struct StudentAccount {
-    let swipesBalance: SwipesBalance
-    let flexBalance: FlexBalance
+    let swipesBalance: SwipesBalance?
+    let flexBalance: FlexBalance?
+}
+extension StudentAccount {
+    public static var empty: StudentAccount {
+        return StudentAccount(swipesBalance: nil, flexBalance: nil)
+    }
 }
