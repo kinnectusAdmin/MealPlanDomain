@@ -18,10 +18,12 @@ public struct SwipesBalance: Balance {
     public var received: Double
     public let sent: Double
     public var converted: Double
+    public static let mock: SwipesBalance = SwipesBalance(remaining: 100, spent: 20, received: 10, sent: 12, converted: 14)
 }
 public struct FlexBalance: Balance {
     public var remaining: Double
     public var spent: Double
     public var received: Double
     public var converted: Double
+    public static let mock: FlexBalance = FlexBalance(remaining: 150, spent: 10, received: 13, converted: 88)
 }

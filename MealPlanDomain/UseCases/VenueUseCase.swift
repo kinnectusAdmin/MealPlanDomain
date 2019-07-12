@@ -10,5 +10,4 @@ import Foundation
 public protocol VenueUseCase {
     func fetchAllVenues()
     func fetchVenue(id: String)
-    
 }

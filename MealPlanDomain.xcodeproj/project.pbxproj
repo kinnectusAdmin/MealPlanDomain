@@ -14,6 +14,8 @@
 		DA0CB22022296705009C23FB /* SchoolUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CB21F22296705009C23FB /* SchoolUseCase.swift */; };
 		DA0CB2222229674C009C23FB /* EventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CB2212229674C009C23FB /* EventUseCase.swift */; };
 		DA0CB22422296DD1009C23FB /* StudentAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0CB22322296DD1009C23FB /* StudentAccountUseCase.swift */; };
+		DA0F68AC22AC75CF00866977 /* PadOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F68AB22AC75CF00866977 /* PadOutput.swift */; };
+		DA0F68B622AC872700866977 /* TransferDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F68B522AC872700866977 /* TransferDirection.swift */; };
 		DAF3AA612227B63D00FFF4E5 /* MealPlanDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3AA572227B63C00FFF4E5 /* MealPlanDomain.framework */; };
 		DAF3AA662227B63D00FFF4E5 /* MealPlanDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3AA652227B63D00FFF4E5 /* MealPlanDomainTests.swift */; };
 		DAF3AA682227B63D00FFF4E5 /* MealPlanDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = DAF3AA5A2227B63C00FFF4E5 /* MealPlanDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +49,8 @@
 		DA0CB21F22296705009C23FB /* SchoolUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolUseCase.swift; sourceTree = "<group>"; };
 		DA0CB2212229674C009C23FB /* EventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventUseCase.swift; sourceTree = "<group>"; };
 		DA0CB22322296DD1009C23FB /* StudentAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAccountUseCase.swift; sourceTree = "<group>"; };
+		DA0F68AB22AC75CF00866977 /* PadOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadOutput.swift; sourceTree = "<group>"; };
+		DA0F68B522AC872700866977 /* TransferDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDirection.swift; sourceTree = "<group>"; };
 		DAF3AA572227B63C00FFF4E5 /* MealPlanDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MealPlanDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3AA5A2227B63C00FFF4E5 /* MealPlanDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealPlanDomain.h; sourceTree = "<group>"; };
 		DAF3AA5B2227B63C00FFF4E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				DAF3AA842228180F00FFF4E5 /* StudentAccount.swift */,
 				DAF3AA862228183200FFF4E5 /* Balances.swift */,
 				DA0C7E182242E79D006C26BD /* Objects.swift */,
+				DA0F68AB22AC75CF00866977 /* PadOutput.swift */,
+				DA0F68B522AC872700866977 /* TransferDirection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0F68AC22AC75CF00866977 /* PadOutput.swift in Sources */,
 				DAF3AA7F222817DF00FFF4E5 /* MonetaryType.swift in Sources */,
 				DAF3AA732227B68A00FFF4E5 /* MealPlanUser.swift in Sources */,
 				DA0CB21C222965CB009C23FB /* MealPlanUserUseCase.swift in Sources */,
@@ -278,6 +285,7 @@
 				DAF3AA752228172100FFF4E5 /* School.swift in Sources */,
 				DA0CB22022296705009C23FB /* SchoolUseCase.swift in Sources */,
 				DAF3AA792228174000FFF4E5 /* MealPlan.swift in Sources */,
+				DA0F68B622AC872700866977 /* TransferDirection.swift in Sources */,
 				DAF3AA7B2228176200FFF4E5 /* Events.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,4 +36,60 @@ public struct Objects {
         case spent
         case received
     }
+    public enum NavigationPage: Int {
+        case mainView = 0
+        case conversion = 1
+        case transfer = 2
+        case menu = 3
+        public var id: String {
+            switch self {
+            case .mainView:
+                return "MainFeedView"
+            case .transfer:
+                return "TransferView"
+            case .conversion:
+                return "ConversionView"
+            case .menu:
+                return "MenuView"
+            }
+        }
+        public func isAfter(_ page: NavigationPage) -> Bool {
+            return rawValue > page.rawValue
+        }
+    }
+    public enum Coordinators {
+        case onboard
+        case login
+        case createAccount
+        case mainNavigation
+        public func identifier() -> String {
+            switch self {
+            case .onboard:
+               return "OnboardCoordinator"
+            case .login:
+                return "LoginCoordinator"
+            case .createAccount:
+                return "CreateAccountCoordinator"
+            case .mainNavigation:
+                return "MainNavigationCoordinator"
+            }
+        }
+    }
+    public enum StudentAccountSignUpState {
+        case signUpSucceeded(StudentAccount)
+        case signUpFailure
+        case loading
+        case none
+    }
+    public enum UserLoginState {
+        case loginSucceeded(MealPlanUser)
+        case loginFailure
+        case loading
+        case none
+    }
+    public enum AlertState {
+        case notDisplayed
+        case alert(message: String)
+        case dismiss
+    }
 }

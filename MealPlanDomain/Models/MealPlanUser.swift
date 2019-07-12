@@ -23,4 +23,8 @@ extension MealPlanUser {
     public static var local: MealPlanUser {
         return MealPlanUser(firstName: "Blake", lastName: "Rogers", email: "", uid: "", school: School.empty, mealPlan: MealPlan(id: "", type: ""), imageURL: "", willReceiveNotifications: true, phoneNumber: "")
     }
+    public static var empty: MealPlanUser {
+        return MealPlanUser(firstName: "", lastName: "", email: "", uid: "", school: School.empty, mealPlan: MealPlan(id: "", type: ""), imageURL: "", willReceiveNotifications: true, phoneNumber: "")
+    }
+    
 }

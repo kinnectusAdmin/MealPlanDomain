@@ -8,11 +8,14 @@
 
 import Foundation
 public struct StudentAccount {
-    let swipesBalance: SwipesBalance?
-    let flexBalance: FlexBalance?
+    public let swipesBalance: SwipesBalance?
+    public let flexBalance: FlexBalance?
 }
 extension StudentAccount {
     public static var empty: StudentAccount {
         return StudentAccount(swipesBalance: nil, flexBalance: nil)
+    }
+    public static var mock: StudentAccount {
+        return StudentAccount(swipesBalance: SwipesBalance.mock, flexBalance: FlexBalance.mock)
     }
 }

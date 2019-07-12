@@ -56,6 +56,12 @@ public struct DiningEvent: EventType {
         self.description = description
         self.user = user
     }
+    public static let defaultEvent = DiningEvent(event: "",
+                                          venue: "",
+                                          value: 20,
+                                          date: Date().timeIntervalSince1970,
+                                          description: "Dined somewhere Good",
+                                          user: EventUser())
 }
 public struct TransferEvent: EventType {
     public var eventID: String
@@ -68,6 +74,7 @@ public struct TransferEvent: EventType {
     public let senderEndingBalance: Double
     public let receiverStartingBalance: Double
     public let receiverEndingBalance: Double
+    public static let defaultEvent: TransferEvent = TransferEvent(eventID: "", value: 2, date: Date().timeIntervalSince1970, description: "Transferred 2 swipes to Michael", sender: EventUser(), receiver: EventUser(), senderStartingBalance: 5, senderEndingBalance: 7, receiverStartingBalance: 7, receiverEndingBalance: 5)
 }
 public struct ConversionEvent: EventType {
     public var eventID: String
@@ -75,4 +82,6 @@ public struct ConversionEvent: EventType {
     public var date: TimeInterval
     public var description: String
     public let monetaryType: MonetaryType
+    public static let defaultEvent: ConversionEvent = ConversionEvent(eventID: "", value: 2, date: Date().timeIntervalSince1970, description: "Converted 2 swipes to flex", monetaryType: .swipes)
+    public static let empty: ConversionEvent = ConversionEvent(eventID: "", value: 0, date: Date().timeIntervalSince1970, description: "", monetaryType: .swipes)
 }

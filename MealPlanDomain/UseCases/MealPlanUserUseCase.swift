@@ -22,4 +22,10 @@ public protocol MealPlanUserUseCase: class {
     ///
     /// - Parameter user: MealPlanUser
     func updateUser(user: MealPlanUser)
+    /// Logs in a new user
+    ///
+    /// - Parameters:
+    ///   - email: String
+    ///   - password: String
+    func loginUser(email: String, password: String)
 }
