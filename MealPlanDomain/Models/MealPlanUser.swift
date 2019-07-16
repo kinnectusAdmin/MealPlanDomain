@@ -18,6 +18,9 @@ public struct MealPlanUser {
     public let imageURL: String
     public let willReceiveNotifications: Bool
     public let phoneNumber: String
+    public func asEventUser() -> EventUser {
+        return EventUser(id: uid, imageURL: imageURL)
+    }
 }
 extension MealPlanUser {
     public static var local: MealPlanUser {
@@ -26,5 +29,4 @@ extension MealPlanUser {
     public static var empty: MealPlanUser {
         return MealPlanUser(firstName: "", lastName: "", email: "", uid: "", school: School.empty, mealPlan: MealPlan(id: "", type: ""), imageURL: "", willReceiveNotifications: true, phoneNumber: "")
     }
-    
 }

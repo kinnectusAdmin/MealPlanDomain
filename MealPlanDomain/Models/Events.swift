@@ -9,7 +9,7 @@
 import Foundation
 public protocol EventType {
     var eventID: String {get set}
-    var value: Double {get set}
+    var value: Int {get set}
     var date: TimeInterval {get set}
     var description: String { get set}
     var eventKind: EventKind? { get }
@@ -36,19 +36,16 @@ public enum EventKind {
 public struct EventUser {
     public let id: String
     public let imageURL: String
-    public init() {
-        id = ""
-        imageURL = ""
-    }
+    public static let empty: EventUser = EventUser(id: "", imageURL: "")
 }
 public struct DiningEvent: EventType {
     public var eventID: String
     public let venueID: String
-    public var value: Double
+    public var value: Int
     public var date: TimeInterval
     public var description: String
     public let user: EventUser
-    public init(event: String = "", venue: String = "", value: Double = 0, date: TimeInterval = Date().timeIntervalSince1970, description: String = "", user: EventUser = EventUser()) {
+    public init(event: String = "", venue: String = "", value: Int = 0, date: TimeInterval = Date().timeIntervalSince1970, description: String = "", user: EventUser = EventUser.empty) {
         eventID = event
         venueID = venue
         self.value = value
@@ -61,11 +58,11 @@ public struct DiningEvent: EventType {
                                           value: 20,
                                           date: Date().timeIntervalSince1970,
                                           description: "Dined somewhere Good",
-                                          user: EventUser())
+                                          user: EventUser.empty)
 }
 public struct TransferEvent: EventType {
     public var eventID: String
-    public var value: Double
+    public var value: Int
     public var date: TimeInterval
     public var description: String
     public let sender: EventUser
@@ -74,14 +71,33 @@ public struct TransferEvent: EventType {
     public let senderEndingBalance: Double
     public let receiverStartingBalance: Double
     public let receiverEndingBalance: Double
-    public static let defaultEvent: TransferEvent = TransferEvent(eventID: "", value: 2, date: Date().timeIntervalSince1970, description: "Transferred 2 swipes to Michael", sender: EventUser(), receiver: EventUser(), senderStartingBalance: 5, senderEndingBalance: 7, receiverStartingBalance: 7, receiverEndingBalance: 5)
+    public static let defaultEvent: TransferEvent = TransferEvent(value: 2, description: "Transferred 2 swipes to Michael", sender: EventUser.empty, receiver: EventUser.empty)
+    public init(value: Int, description: String, sender: EventUser, receiver: EventUser, senderStartingBalance: Double = 0, senderEndingBalance: Double = 0, receiverStartingBalance: Double = 0, receiverEndingBalance: Double = 0) {
+        self.eventID = UUID().uuidString
+        self.value = value
+        self.description = description
+        self.sender = sender
+        self.receiver = receiver
+        self.date = Date().timeIntervalSince1970
+        self.senderStartingBalance = senderStartingBalance
+        self.senderEndingBalance = senderEndingBalance
+        self.receiverStartingBalance = receiverStartingBalance
+        self.receiverEndingBalance = receiverEndingBalance
+    }
 }
 public struct ConversionEvent: EventType {
     public var eventID: String
-    public var value: Double
+    public var value: Int
     public var date: TimeInterval
     public var description: String
     public let monetaryType: MonetaryType
-    public static let defaultEvent: ConversionEvent = ConversionEvent(eventID: "", value: 2, date: Date().timeIntervalSince1970, description: "Converted 2 swipes to flex", monetaryType: .swipes)
-    public static let empty: ConversionEvent = ConversionEvent(eventID: "", value: 0, date: Date().timeIntervalSince1970, description: "", monetaryType: .swipes)
+    public static let defaultEvent: ConversionEvent = ConversionEvent(value: 2, description: "Converted 2 swipes to flex", monetaryType: .swipes)
+    public static let empty: ConversionEvent = ConversionEvent(value: 0, description: "", monetaryType: .swipes)
+    public init(value: Int, description: String, monetaryType: MonetaryType) {
+        self.eventID = UUID().uuidString
+        self.value = value
+        self.date = Date().timeIntervalSince1970
+        self.description = description
+        self.monetaryType = monetaryType
+    }
 }

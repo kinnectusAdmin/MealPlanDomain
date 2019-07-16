@@ -34,6 +34,9 @@ extension PadOutput {
             let result = String(currentInput.dropLast()).replacingOccurrences(of: "0", with: "")
             let resultValue = result.isEmpty ? "0" : result
             return resultValue
+        case .zero:
+            let result = currentInput.appending(input.rawValue).replacingOccurrences(of: "00", with: "0")
+            return result.isEmpty ? "0" : result
         default:
             let result = currentInput.appending(input.rawValue).replacingOccurrences(of: "0", with: "")
             return result.isEmpty ? "0" : result
